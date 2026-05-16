@@ -1,0 +1,54 @@
+name: smartspend
+description: Gestionnaire de budget intelligent avec IA
+
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  # State Management — obligatoire cahier des charges
+  flutter_riverpod: ^3.3.1
+
+  # HTTP Client
+  dio: ^5.4.0
+
+  # Cache local offline
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+
+  # Graphiques
+  fl_chart: ^0.68.0
+
+  # Multilingue FR/EN
+  easy_localization: ^3.0.7
+
+  # Stockage sécurisé JWT
+  flutter_secure_storage: ^9.0.0
+
+  # Navigation
+  go_router: ^13.0.0
+
+  # Animations
+  flutter_animate: ^4.5.0
+
+  # Icônes
+  cupertino_icons: ^1.0.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+ 
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/translations/
