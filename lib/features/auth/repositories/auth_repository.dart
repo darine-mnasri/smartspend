@@ -47,7 +47,7 @@ class AuthRepository {
     }
   }
 
-  // ── Logout → supprimer le token
+  // ── Logout → supprimer le token testttgit
   Future<void> logout() async {
     await StorageService.deleteToken();
   }
