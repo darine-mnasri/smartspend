@@ -104,7 +104,7 @@ class _AddTransactionPageState extends ConsumerState<AddTransactionPage> {
                     const SizedBox(width: 10),
                     Expanded(
                       child: Text(
-                        'La catégorie sera détectée automatiquement par IA',
+                        tr('ai_auto_category'),
                         style: TextStyle(
                           color:    AppColors.primary,
                           fontSize: 13,
@@ -234,7 +234,7 @@ class _AddTransactionPageState extends ConsumerState<AddTransactionPage> {
                         )
                       : const Icon(Icons.auto_awesome),
                   label: Text(
-                    isLoading ? 'Classification IA...' : tr('add'),
+                    isLoading ? tr('ai_classifying') : tr('add'),
                     style: const TextStyle(
                       fontSize:   16,
                       fontWeight: FontWeight.bold,

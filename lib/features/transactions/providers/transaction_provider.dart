@@ -39,30 +39,21 @@ class TransactionState {
 }
 
 class TransactionNotifier extends Notifier<TransactionState> {
-  final TransactionRepository _repository = TransactionRepository();
-  int _generation = 0;
+  late final TransactionRepository _repository;
 
   @override
   TransactionState build() {
-    // Chargement automatique au démarrage
+    _repository = TransactionRepository();
     Future.microtask(() => loadTransactions());
     return const TransactionState();
   }
 
-  void reset() {
-    _generation++;
-    state = const TransactionState();
-  }
-
   Future<void> loadTransactions() async {
-    final generation = _generation;
     state = state.copyWith(isLoading: true, error: null);
     try {
       final list = await _repository.getTransactions();
-      if (generation != _generation) return;
       state = state.copyWith(transactions: list, isLoading: false);
     } catch (e) {
-      if (generation != _generation) return;
       state = state.copyWith(isLoading: false, error: e.toString());
     }
   }
@@ -72,7 +63,6 @@ class TransactionNotifier extends Notifier<TransactionState> {
     required double montant,
     required String date,
   }) async {
-    final generation = _generation;
     state = state.copyWith(isLoading: true, error: null);
     try {
       final newT = await _repository.addTransaction(
@@ -80,14 +70,12 @@ class TransactionNotifier extends Notifier<TransactionState> {
         montant:     montant,
         date:        date,
       );
-      if (generation != _generation) return false;
       state = state.copyWith(
         transactions: [newT, ...state.transactions],
         isLoading:    false,
       );
       return true;
     } catch (e) {
-      if (generation != _generation) return false;
       state = state.copyWith(isLoading: false, error: e.toString());
       return false;
     }

@@ -44,11 +44,8 @@ class AuthNotifier extends Notifier<AuthState> {
     return AuthState(isLoggedIn: isLoggedIn);
   }
 
-  // ✅ Réinitialise tous les providers de données
+  // ✅ Seulement invalidate() — plus de reset() inutile
   void _resetAllProviders() {
-    ref.read(transactionProvider.notifier).reset();
-    ref.read(budgetProvider.notifier).reset();
-    ref.read(anomalyProvider.notifier).reset();
     ref.invalidate(transactionProvider);
     ref.invalidate(budgetProvider);
     ref.invalidate(anomalyProvider);
@@ -85,8 +82,6 @@ class AuthNotifier extends Notifier<AuthState> {
         password: password,
       );
 
-      // ✅ Réinitialiser les providers AVANT de changer l'état
-      // pour que les nouveaux providers chargent avec le nouveau token
       _resetAllProviders();
 
       state = state.copyWith(
@@ -105,11 +100,7 @@ class AuthNotifier extends Notifier<AuthState> {
 
   Future<void> logout() async {
     await _repository.logout();
-
-    // ✅ Vider tous les providers au logout
     _resetAllProviders();
-
-    // Reset complet de l'état auth
     state = const AuthState();
   }
 }
