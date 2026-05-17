@@ -30,7 +30,7 @@ class AnomalyState {
 }
 
 class AnomalyNotifier extends Notifier<AnomalyState> {
-  final DioClient _dio = DioClient();
+  final _dio = DioClient();
 
   @override
   AnomalyState build() {

@@ -39,13 +39,12 @@ class TransactionState {
 }
 
 class TransactionNotifier extends Notifier<TransactionState> {
-  late final TransactionRepository _repository;
+  final _repository = TransactionRepository();
 
   @override
   TransactionState build() {
-    _repository = TransactionRepository();
-    Future.microtask(() => loadTransactions());
-    return const TransactionState();
+  Future.microtask(() => loadTransactions());
+  return const TransactionState();
   }
 
   Future<void> loadTransactions() async {

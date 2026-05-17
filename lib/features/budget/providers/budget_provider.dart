@@ -43,11 +43,11 @@ class BudgetState {
 }
 
 class BudgetNotifier extends Notifier<BudgetState> {
-  late final BudgetRepository _repository;
+  final _repository = BudgetRepository();
 
   @override
   BudgetState build() {
-    _repository = BudgetRepository();
+  
 
     // ✅ Écoute automatique transactions
     ref.listen<TransactionState>(
