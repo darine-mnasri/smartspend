@@ -13,8 +13,8 @@ class DioClient {
   final Dio _dio = Dio(
     BaseOptions(
       baseUrl: ApiConstants.baseUrl,
-      connectTimeout: const Duration(seconds: 10),  // timeout connexion
-      receiveTimeout: const Duration(seconds: 10),  // timeout réponse
+      connectTimeout: const Duration(seconds: 10),  
+      receiveTimeout: const Duration(seconds: 10),  
       headers: {'Content-Type': 'application/json'},
     ),
   )..interceptors.add(
@@ -26,19 +26,19 @@ class DioClient {
         if (token != null) {
           options.headers['Authorization'] = 'Bearer $token';
         }
-        print('🌐 ${options.method} ${options.path}');
+        print(' ${options.method} ${options.path}');
         return handler.next(options);
       },
 
-      // ── Réponse reçue → log
+      // ── Réponse reçue 
       onResponse: (response, handler) {
-        print('✅ ${response.statusCode} ${response.requestOptions.path}');
+        print(' ${response.statusCode} ${response.requestOptions.path}');
         return handler.next(response);
       },
 
       // ── Erreur → convertir en AppException lisible
       onError: (error, handler) {
-        print('❌ Erreur : ${error.message}');
+        print(' Erreur : ${error.message}');
 
         if (error.type == DioExceptionType.connectionTimeout ||
             error.type == DioExceptionType.receiveTimeout) {

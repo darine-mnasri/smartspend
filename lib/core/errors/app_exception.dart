@@ -7,7 +7,7 @@ class AppException implements Exception {
   @override
   String toString() => message;
 
-  // ── Fabrique selon le type d'erreur reçu de Dio
+  
   factory AppException.fromStatusCode(int? statusCode, String? serverMessage) {
     switch (statusCode) {
       case 400:
@@ -17,7 +17,7 @@ class AppException implements Exception {
         );
       case 401:
         return AppException(
-          message: 'Session expirée. Veuillez vous reconnecter.',
+          message: 'mauvais mot de passe. Veuillez vous reconnecter.',
           statusCode: 401,
         );
       case 404:

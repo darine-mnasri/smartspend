@@ -19,7 +19,7 @@ class Transaction {
     return Transaction(
       id:              json['id'],
       description:     json['description'],
-      // MySQL retourne montant en String → on parse en double
+      
       montant:         double.parse(json['montant'].toString()),
       categorie:       json['categorie'],
       dateTransaction: json['date_transaction'],

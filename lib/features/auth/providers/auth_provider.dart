@@ -44,7 +44,7 @@ class AuthNotifier extends Notifier<AuthState> {
     return AuthState(isLoggedIn: isLoggedIn);
   }
 
-  // ✅ Seulement invalidate() — plus de reset() inutile
+  
   void _resetAllProviders() {
     ref.invalidate(transactionProvider);
     ref.invalidate(budgetProvider);
