@@ -52,6 +52,12 @@
   "no_enough_data": "Pas assez de données",
   "refresh": "Actualiser",
   "profile": "Profil",
+  "hello": "Bonjour",
+  "budget_exceeded": "Plafond dépassé de",
+  "spent": "Dépensé",
+  "remaining": "Reste",
+  "limit": "Plafond",
+  "anomaly_alert": "Dépense anormale ! ",
   "categories": {
     "Alimentation": "Alimentation",
     "Transport": "Transport",
@@ -61,4 +67,5 @@
     "Logement": "Logement",
     "Autre": "Autre"
   }
+  
 }

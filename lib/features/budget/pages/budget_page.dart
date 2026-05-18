@@ -267,7 +267,7 @@ class BudgetPage extends ConsumerWidget {
                                           ),
                                         ),
                                         Text(
-                                          'Plafond : ${b.plafond.toStringAsFixed(2)} DT',
+                                          '${tr('limit')} : ${b.plafond.toStringAsFixed(2)} DT',
                                           style: TextStyle(
                                             color:    Colors.grey[500],
                                             fontSize: 12,
@@ -363,7 +363,7 @@ class BudgetPage extends ConsumerWidget {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        'Dépensé',
+                                        tr('spent'),
                                         style: TextStyle(
                                           color:    Colors.grey[400],
                                           fontSize: 11,
@@ -405,7 +405,7 @@ class BudgetPage extends ConsumerWidget {
                                         CrossAxisAlignment.end,
                                     children: [
                                       Text(
-                                        'Reste',
+                                        tr('remaining'),
                                         style: TextStyle(
                                           color:    Colors.grey[400],
                                           fontSize: 11,
@@ -446,7 +446,7 @@ class BudgetPage extends ConsumerWidget {
                                           color: AppColors.error, size: 16),
                                       const SizedBox(width: 8),
                                       Text(
-                                        'Plafond dépassé de ${reste.abs().toStringAsFixed(2)} DT !',
+                                        '${tr('budget_exceeded')} ${reste.abs().toStringAsFixed(2)} DT !',
                                         style: const TextStyle(
                                           color:      AppColors.error,
                                           fontSize:   12,

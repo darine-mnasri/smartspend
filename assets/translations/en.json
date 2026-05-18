@@ -52,6 +52,12 @@
   "no_enough_data": "Not enough data",
   "refresh": "Refresh",
   "profile": "Profile",
+  "hello": "Hello",
+  "budget_exceeded": "Limit exceeded by",
+  "spent": "Spent",
+  "remaining": "Remaining",
+  "limit": "Limit",
+  "anomaly_alert": "Abnormal expense! ",
   "categories": {
     "Alimentation": "Food",
     "Transport": "Transport",

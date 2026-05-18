@@ -169,7 +169,7 @@ class _AnomalyCard extends StatelessWidget {
                     const SizedBox(width: 8),
                     Expanded(
                       child: Text(
-                        anomalie.message,
+                        '${tr('anomaly_alert')} ${anomalie.montant.toStringAsFixed(2)} DT > ${tr('threshold')} ${anomalie.seuil.toStringAsFixed(2)} DT',
                         style: const TextStyle(
                           color:    AppColors.error,
                           fontSize: 12,
