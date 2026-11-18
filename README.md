@@ -1,17 +1,35 @@
-# smartspend
+# SmartSpend
 
-A new Flutter project.
+SmartSpend est une application mobile Flutter de gestion budgétaire intelligente. Elle permet de suivre les dépenses, organiser les budgets par catégorie, consulter des statistiques et détecter les transactions anormales.
 
-## Getting Started
+## Fonctionnalités
 
-This project is a starting point for a Flutter application.
+- Inscription et connexion avec authentification JWT
+- Consultation, ajout et suppression de transactions
+- Classification automatique des transactions par IA côté API
+- Création, modification et suppression des budgets par catégorie
+- Calcul des dépenses, du reste disponible et du pourcentage consommé
+- Détection des dépenses anormales
+- Tableau de bord avec graphique circulaire et graphique d'évolution
+- Interface disponible en français et en anglais
+- Persistance du jeton de connexion avec Hive
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Prérequis
+
+- Flutter SDK compatible avec Dart `>=3.0.0 <4.0.0`
+- Un éditeur comme Android Studio ou Visual Studio Code
+- Un appareil Android, un émulateur ou un navigateur
+- Une API SmartSpend accessible
+
+## Installation
+
+Cloner le projet :
+
+```bash
+git clone https://github.com/darine-mnasri/smartspend.git
+cd smartspend
+```
+
